@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Photos • Episodic AI Anchor</title>
+  <meta name="description" content="AI Anchor Prototype for Google Photos with Episodic Temporal Clustering, EXIF Anomaly Re-anchoring, and Life Event Intelligence." />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23ea4335' d='M12 2a5 5 0 0 1 5 5v5h-5a5 5 0 0 1 0-10z'/><path fill='%234285f4' d='M22 12a5 5 0 0 1-5 5h-5v-5a5 5 0 0 1 10 0z'/><path fill='%2334a853' d='M12 22a5 5 0 0 1-5-5v-5h5a5 5 0 0 1 0 10z'/><path fill='%23fbbc05' d='M2 12a5 5 0 0 1 5-5h5v5a5 5 0 0 1-10 0z'/></svg>" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Google Photos Sidebar -->
+    <aside class="app-sidebar" aria-label="Main Navigation">
+      <div class="brand-header">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a5 5 0 0 1 5 5v5h-5a5 5 0 0 1 0-10z" fill="#ea4335"/>
+            <path d="M22 12a5 5 0 0 1-5 5h-5v-5a5 5 0 0 1 10 0z" fill="#4285f4"/>
+            <path d="M12 22a5 5 0 0 1-5-5v-5h5a5 5 0 0 1 0 10z" fill="#34a853"/>
+            <path d="M2 12a5 5 0 0 1 5-5h5v5a5 5 0 0 1-10 0z" fill="#fbbc05"/>
+          </svg>
+        </div>
+        <div class="brand-title">
+          Photos <span>AI Anchor</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" id="nav-photos">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span>Photos</span>
+        </button>
+
+        <button class="nav-item" id="nav-explore">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <span>Explore</span>
+        </button>
+
+        <button class="nav-item" id="nav-sharing">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+          <span>Sharing</span>
+        </button>
+
+        <button class="nav-item" id="nav-favorites">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+          </svg>
+          <span>Favorites</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="engine-status-pill" title="Episodic Multi-Stage Retrieval Active">
+          <div class="pulse-dot"></div>
+          <span>Episodic Engine Active</span>
+        </div>
+
+        <button class="btn-thesis-benchmark" id="btn-thesis-benchmark" title="View Engine Benchmarks & Performance Metrics">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+          <span>Engine Benchmarks</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Application View -->
+    <main class="app-main">
+      <!-- Top Navigation & Search Bar -->
+      <header class="top-navbar">
+        <div class="search-container-row">
+          <form class="search-box-wrapper" id="search-form" role="search">
+            <div class="search-box">
+              <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <input
+                type="text"
+                class="search-input"
+                id="search-input"
+                placeholder='Search "winter trip with rahul", "goa beach wedding", "25th birthday"... (Press /)'
+                autocomplete="off"
+                aria-label="Search photos and episodic memories"
+              />
+              <button type="button" class="btn-clear-search" id="btn-clear-search" style="display: none;" title="Clear search">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+              <button type="submit" class="btn-ask-ai" id="btn-ask-ai">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.999 22C11.999 22 11.233 13.784 4 12C11.233 10.216 11.999 2 11.999 2C11.999 2 12.765 10.216 20 12C12.765 13.784 11.999 22 11.999 22ZM18.499 6.5C18.499 6.5 18.04 4.035 15.5 3.5C18.04 2.965 18.499 0.5 18.499 0.5C18.499 0.5 18.959 2.965 21.5 3.5C18.959 4.035 18.499 6.5 18.499 6.5Z"/>
+                </svg>
+                <span>Ask AI</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="nav-actions">
+            <button class="icon-btn" id="btn-theme-toggle" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </button>
+            <div class="icon-btn" title="Antigravity Agentic Prototype" style="font-weight:700; font-size:0.85rem; background:linear-gradient(135deg, #1a73e8, #7c3aed); color:white; border:none;">
+              AG
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Chips Bar (Suggested episodic queries or follow-up filters) -->
+        <div class="filter-chips-bar" id="filter-chips-bar" role="toolbar" aria-label="Query suggestions and filters"></div>
+      </header>
+
+      <!-- Main Photo Scroll Timeline & Episodic Grid -->
+      <section class="gallery-scroll-area" id="gallery-scroll-area" aria-label="Photo Gallery Timeline"></section>
+    </main>
+  </div>
+
+  <!-- Photo Lightbox & Metadata Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Details">
+    <div class="lightbox-dialog">
+      <div class="lightbox-image-side" id="lightbox-image-container"></div>
+      <div class="lightbox-details-side" id="lightbox-details-container">
+        <!-- Injected via JavaScript openLightbox -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Engine Benchmark Evaluation Drawer / Modal -->
+  <div class="thesis-modal" id="thesis-modal" role="dialog" aria-modal="true" aria-label="Engine Benchmark Results">
+    <div class="thesis-container">
+      <div class="thesis-header">
+        <h2>
+          <span>⚡</span>
+          Episodic AI Engine: System Benchmarks
+        </h2>
+        <button class="btn-close-modal" id="btn-close-thesis" aria-label="Close benchmark modal">
+          <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="thesis-body" id="thesis-modal-body">
+        <!-- Rendered via JavaScript openThesisModal / renderBenchmarkData -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic Controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>

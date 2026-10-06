@@ -85,28 +85,6 @@ Traditional photo libraries rely strictly on chronological EXIF metadata (`DateT
 
 ---
 
-## ☁️ Deployment on Netlify
-
-This project is pre-configured for **Netlify** with zero build configuration required.
-
-### Method 1: Continuous Deployment via GitHub (Recommended)
-1. Push this repository to GitHub.
-2. In your [Netlify Dashboard](https://app.netlify.com/), click **Add new site** > **Import an existing project** > **GitHub**.
-3. Select your repository. Netlify reads `netlify.toml` and automatically configures:
-   - **Publish directory**: `public`
-   - **Functions directory**: `netlify/functions`
-4. *(Optional)* Add your Gemini API key under **Site configuration > Environment variables**:
-   - **Key**: `GEMINI_API_KEY`
-   - **Value**: `your_api_key_here`
-5. Click **Deploy site**.
-
-### Method 2: Manual Drag & Drop
-1. In your Netlify dashboard, go to the **Deploys** tab of your site.
-2. Drag and drop the repository folder directly into the Netlify drop zone.
-3. The site will deploy instantly.
-
----
-
 ## 🧪 Benchmark Test Suites
 
 The embedded **Engine Benchmarks** drawer evaluates the engine across 6 core scenarios:

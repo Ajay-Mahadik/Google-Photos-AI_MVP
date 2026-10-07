@@ -1,3 +1,0 @@
-# Netlify Redirects File
-/api/photos       /data/gallery.json              200
-/api/search       /.netlify/functions/search      200
